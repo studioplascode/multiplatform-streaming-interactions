@@ -1,7 +1,9 @@
-export type reducer = "twitch";
+export type reducer = 
+    "twitch" |
+    "config";
 
 export type actionNames = 
-    "";
+    "setId";
 
 export type actionTypes = `${reducer}/${actionNames}`;
 

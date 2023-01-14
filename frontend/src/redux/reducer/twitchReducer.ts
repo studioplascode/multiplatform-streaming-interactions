@@ -4,7 +4,7 @@ const initialState = {
 
 };
  
- const storageReducer = (state = initialState, action: action) => {
+ const twitchReducer = (state = initialState, action: action) => {
  
     switch (action.type) {
         default:
@@ -12,5 +12,5 @@ const initialState = {
     }
  };
  
- export default storageReducer;
+ export default twitchReducer;
  

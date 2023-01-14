@@ -2,9 +2,9 @@ import "./ChatMessage.css";
 
 export default function ChatMessage(props:any) {
     return(
-        <div className="chatMessage">
-            <p className="chatMessageName">{props.name}:</p>
-            <p className="chatMessageContent">{props.content}</p>
+        <div className="chatOverlayMessage">
+            <p className="chatOverlayMessageName">{props.name}:</p>
+            <p className="chatOverlayMessageContent">{props.content}</p>
         </div>
     );
 }
