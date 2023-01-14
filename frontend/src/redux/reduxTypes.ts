@@ -3,7 +3,8 @@ export type reducer =
     "config";
 
 export type actionNames = 
-    "setId";
+    "setId" |
+    "setWidget";
 
 export type actionTypes = `${reducer}/${actionNames}`;
 

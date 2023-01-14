@@ -1,7 +1,8 @@
 import { action } from "../reduxTypes";
 
 const initialState = {
-    id: undefined
+    id: undefined,
+    widget: undefined
 };
  
  const configReducer = (state = initialState, action: action) => {
@@ -9,6 +10,8 @@ const initialState = {
     switch (action.type) {
         case "config/setId": 
             return {...state, id: action.payload};
+        case "config/setWidget":
+            return {...state, widget: action.payload};
 
         default:
             return state;

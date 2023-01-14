@@ -1,7 +1,11 @@
 export type wsMessage = {
     header: header;
-    body: object | string;
+    body: object | widget;
 }
 
 export type header =
-    "id";
+    "id" |
+    "widget";
+
+export type widget =
+    "chatOverlay";
