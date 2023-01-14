@@ -1,7 +1,7 @@
-import { widget } from "../../types";
+import { id, widget } from "../../types";
 import { action } from "../reduxTypes";
 
-export const setId = (id: string) => {
+export const setId = (id: id) => {
     const obj: action = {
        type: "config/setId",
        payload: id,

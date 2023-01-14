@@ -9,7 +9,7 @@ const initialState = {
  
     switch (action.type) {
         case "config/setId": 
-            return {...state, id: action.payload};
+            return {...state, ...action.payload};
         case "config/setWidget":
             return {...state, widget: action.payload};
 

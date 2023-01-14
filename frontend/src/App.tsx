@@ -11,11 +11,11 @@ import { widget, wsMessage } from './types';
 const store = configureStore();
 const ws = new ReconnectingWebSocket("ws://localhost:4001");
 
-const id = window.location.pathname.split('/')[0];
+const id = {id: window.location.pathname.split('/')[0]};
 store.dispatch(setId(id));
 const openMsg:wsMessage = {
   header: "id",
-  body: {id: id}
+  body: id
 };
 
 function App() {

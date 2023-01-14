@@ -1,10 +1,13 @@
+import { id, twitchChatMessage, widget, youtubeChatMessage } from "../types";
+
 export type reducer = 
     "twitch" |
     "config";
 
 export type actionNames = 
     "setId" |
-    "setWidget";
+    "setWidget" |
+    "newChatMessage";
 
 export type actionTypes = `${reducer}/${actionNames}`;
 
@@ -13,6 +16,5 @@ export type action = {
     type: actionTypes
 };
 
-export type actionPayloads =
-    string;
+export type actionPayloads = id | widget | twitchChatMessage | youtubeChatMessage;
 
