@@ -1,6 +1,6 @@
-import "./ChatMessage.css";
+import "./ChatOverlayMessage.css";
 
-export default function ChatMessage(props:any) {
+export default function ChatOverlayMessage(props:any) {
     return(
         <div className="chatOverlayMessage">
             <p className="chatOverlayMessageName">{props.name}:</p>
