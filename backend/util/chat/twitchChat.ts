@@ -23,7 +23,7 @@ export default function twitchChat() {
         ws.close();
         return;
       }
-      console.log(`📥 Client has sent us: ${dataParsed.body}`);
+      console.log(`📥 Client has sent us: ${dataParsed?.body}`);
 
       if (typeof dataParsed?.body?.id === "string" && dataParsed?.body?.id.length > 0) {
         connectToTwitchChat(dataParsed.body.id, ws).then((res: Chat) => (client = res));
@@ -34,21 +34,21 @@ export default function twitchChat() {
 
     // handling what to do when clients disconnects from server
     ws.on("close", () => {
-      console.log("the client has connected");
-      client.disconnect();
+      console.log("the client has disconnected");
+      if (client) client.disconnect();
     });
 
     // handling client connection error
     ws.onerror = function () {
       console.log("Some Error occurred");
-      client.disconnect();
+      if (client) client.disconnect();
     };
   });
 }
 
 const handleTwitchMessage: (message: any, ws: WebSocket) => void = (message, ws) => {
   // received message from Twitch, now parse it before sending to client
-  console.log(message);
+  ws.send(message.event);
 };
 
 const connectToTwitchChat: (channel: string, ws: WebSocket) => Promise<Chat> = async (channel, ws) => {
@@ -57,10 +57,7 @@ const connectToTwitchChat: (channel: string, ws: WebSocket) => Promise<Chat> = a
   await chat.connect();
   await chat.join(channel);
 
-  chat.on(ChatEvents.ALL, (message) => {
-    // Do stuff with message: UserNoticeSubscriptionMessage
-    handleTwitchMessage(message, ws);
-  });
+  chat.on("PRIVMSG", (message) => handleTwitchMessage(message, ws));
 
   return chat;
 };
