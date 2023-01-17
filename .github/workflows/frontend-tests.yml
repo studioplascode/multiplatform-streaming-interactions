@@ -7,17 +7,21 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
 
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
-    - name: Run Tests ${{ matrix.node-version }}
-      working-directory: ./frontend
-      run: npm ci && npm run test
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Install Modules ${{ matrix.node-version }}
+      run: npm ci
+    - name: Run Tests
+      run: npm run test
