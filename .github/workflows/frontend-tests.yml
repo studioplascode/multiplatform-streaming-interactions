@@ -13,12 +13,12 @@ jobs:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
+    - name: Run Tests ${{ matrix.node-version }}
+      working-directory: ./frontend
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Run Tests ${{ matrix.node-version }}
-      working-directory: ./frontend
     - run: npm ci
     - run: npm run test
