@@ -52,7 +52,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 - [ ] Easy to use API
 - [ ] Great Documentation for said API
 
-- [ ] Feel free to create issues and suggest features
+Feel free to create issues and suggest features
 
 ## Progress
 - [x] Getting a basic understanding of the Twitch API
