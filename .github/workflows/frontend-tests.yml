@@ -15,10 +15,9 @@ jobs:
     steps:
     - name: Run Tests ${{ matrix.node-version }}
       working-directory: ./frontend
+      run: npm ci && npm run test
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run test
