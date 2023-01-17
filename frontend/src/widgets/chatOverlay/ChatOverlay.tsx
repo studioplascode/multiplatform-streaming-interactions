@@ -1,4 +1,4 @@
-import ChatMessage from "./ChatMessage";
+import ChatOverlayMessage from "./ChatOverlayMessage";
 
 import ReconnectingWebSocket from "reconnecting-websocket";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ export default function Chat(props:any) {
 
     return(
         <div className="chat">
-            {msg.map(m => (<ChatMessage name={m.name} content={m.content}/>))}
+            {msg.map(m => (<ChatOverlayMessage name={m.name} content={m.content}/>))}
         </div>
     );
 }
