@@ -37,6 +37,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
   - [ ] Emoji
   - [ ] Custom Emoji
   - [ ] Roles
+- [ ] Server Subscriptions?
   
 ### UI
 - [ ] Dashboard to configure everything
@@ -48,6 +49,8 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 
 ### Other
 - [ ] Easy setup via docker
+- [ ] Easy to use API
+- [ ] Great Documentation for said API
 
 - [ ] Feel free to create issues and suggest features
 
