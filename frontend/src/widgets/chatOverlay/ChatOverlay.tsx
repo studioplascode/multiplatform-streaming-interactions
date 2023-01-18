@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 let messages:any[] = [];
 
 
-export default function Chat(props:any) {
+const Chat = (props:any) => {
     const [msg, setMsg] = useState(messages);
     
     useEffect(() => {
@@ -27,3 +27,5 @@ export default function Chat(props:any) {
         </div>
     );
 }
+
+export default Chat;
