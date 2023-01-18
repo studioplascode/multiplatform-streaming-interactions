@@ -22,3 +22,8 @@ export type twitchState = {
     chatMessageLimit: number,
     chatMessages: twitchChatMessage[]
 }
+
+export type configState = {
+    id: string | undefined,
+    widget: widget | undefined
+}
