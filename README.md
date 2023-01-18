@@ -23,6 +23,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
   - [ ] Highlighted
   - [ ] Emotes
   - [ ] Badges
+  - [ ] Display Replys as such
 - [ ] Follows
   - [ ] Follow Goals
 - [ ] Subs
