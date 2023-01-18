@@ -24,19 +24,24 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
   - [ ] Emotes
   - [ ] Badges
 - [ ] Follows
+  - [ ] Follow Goals
 - [ ] Subs
+  - [ ] Sub Goals
 
 ### YouTube
 - [ ] Chat
   - [ ] Super Chats
   - [ ] BTTV Emotes?
 - [ ] Members
+  - [ ] Member Goals
+- [ ] Sub Goals
 
 ### Discord
 - [ ] Chat
   - [ ] Emoji
   - [ ] Custom Emoji
   - [ ] Roles
+- [ ] Member Goals
 - [ ] Server Subscriptions?
   
 ### UI
