@@ -56,6 +56,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 - [ ] Sub/Member/Cheer (Event) Overlay
 - [ ] Event Dock/Window
 - [ ] EInk Mode
+- [ ] Multiplatform Mod-View
 
 ### Other
 - [ ] Easy setup via docker
