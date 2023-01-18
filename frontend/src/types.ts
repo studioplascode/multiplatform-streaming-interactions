@@ -18,6 +18,7 @@ export type widgetType =
 
 export type widget = {
     type: widgetType;
+    style: StyleSheet;
 }
 
 export type chatMessage = youtubeChatMessage | twitchChatMessage;

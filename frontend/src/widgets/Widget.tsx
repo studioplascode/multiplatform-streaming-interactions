@@ -7,13 +7,14 @@ const Widget = (props:any) => {
 
     switch(widget.type){
         case "chatOverlay":
-            return <Chat />
+            return <Chat style={widget.style} twitch={props.twitch}/>
     }
 }
 
 function mapStateToProps(state:any) {
     return {
-        widget: state.config.widget
+        widget: state.config.widget,
+        twitch: state.twitch
     }
 }
 

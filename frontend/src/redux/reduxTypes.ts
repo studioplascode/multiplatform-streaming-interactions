@@ -18,3 +18,7 @@ export type action = {
 
 export type actionPayloads = id | widget | twitchChatMessage | youtubeChatMessage;
 
+export type twitchState = {
+    chatMessageLimit: number,
+    chatMessages: twitchChatMessage[]
+}
