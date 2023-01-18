@@ -25,6 +25,9 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
   - [ ] Badges
   - [ ] Display Replys as such
   - [ ] Channel Point Rewards
+  - [ ] Slash Commands
+    - [ ] Shoutout Overlay
+    - [ ] Announcements
 - [ ] Follows
   - [ ] Follow Goals
 - [ ] Subs
