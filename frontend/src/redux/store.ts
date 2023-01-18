@@ -1,6 +1,7 @@
 import { legacy_createStore as createStore, combineReducers } from "redux";
+import { action, state } from "./reduxTypes";
 
-import configReducer from "./reducer/configRecuer";
+import configReducer from "./reducer/configReducer";
 import twitchReducer from "./reducer/twitchReducer";
 
 const appReducer = combineReducers({
@@ -8,8 +9,7 @@ const appReducer = combineReducers({
     twitch: twitchReducer
 });
 
-const rootReducer = (state: any, action: any) => {
-   if (action.type === "RELOAD") return appReducer(undefined, action);
+const rootReducer = (state: state, action: action) => {
    return appReducer(state, action);
 };
 

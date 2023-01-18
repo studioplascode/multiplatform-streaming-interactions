@@ -27,3 +27,8 @@ export type configState = {
     id: string | undefined,
     widget: widget | undefined
 }
+
+export type state = {
+    config: configState,
+    twitch: twitchState
+}

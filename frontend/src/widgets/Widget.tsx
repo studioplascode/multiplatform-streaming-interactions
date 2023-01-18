@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { widget } from "../types";
 import Chat from "./chatOverlay/ChatOverlay";
+import { state } from "../redux/reduxTypes";
 
 const Widget = (props:any) => {
     const widget = props.widget as widget;
@@ -11,7 +12,7 @@ const Widget = (props:any) => {
     }
 }
 
-function mapStateToProps(state:any) {
+function mapStateToProps(state:state) {
     return {
         widget: state.config.widget,
         twitch: state.twitch
