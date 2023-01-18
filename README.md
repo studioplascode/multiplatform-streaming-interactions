@@ -57,6 +57,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 - [ ] Easy setup via docker
 - [ ] Easy to use API
 - [ ] Great Documentation for said API
+- [ ] Polling accross all platforms?
 
 Feel free to create issues and suggest features
 
