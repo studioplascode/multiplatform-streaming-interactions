@@ -4,7 +4,7 @@
 
 ### How and when to create branches 
 
-We have to long-running branches:
+We have two long-running branches:
 - `main` - reflects production
 - `dev` - staged for production
 
