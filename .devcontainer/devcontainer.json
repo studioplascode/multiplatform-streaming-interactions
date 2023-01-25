@@ -1,0 +1,35 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "NodeJS Codespace for Multiplatform-Streaming-Interactions",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+  "remoteUser": "node",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+	4000, //backend
+	4001 //frontend
+  ],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "cd ./backend && npm i && cd ../frontend && npm i",
+
+  // Configure tool-specific properties.
+  "customizations": {
+	"vscode": {
+		"extensions": [
+			"yzhang.markdown-all-in-one", //Markdown All in One
+			"zenclabs.previewjs", //Preview.js
+			"christian-kohler.npm-intellisense", //npm intellisense
+			"PKief.material-icon-theme" //Material Icons
+		]
+	}
+  }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
