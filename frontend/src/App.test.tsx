@@ -7,5 +7,7 @@
 //   const linkElement = screen.getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
-
-export {};
+//@ts-ignore
+describe("App", () => {
+    test.todo("main integration testing");
+});
