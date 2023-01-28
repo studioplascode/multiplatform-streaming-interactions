@@ -1,6 +1,6 @@
 import "./ChatOverlayMessage.css";
 
-export default function ChatOverlayMessage(props:any) {
+const ChatOverlayMessage = (props:any) => {
     return(
         <div className="chatOverlayMessage">
             <p className="chatOverlayMessageName">{props.name}:</p>
@@ -8,3 +8,5 @@ export default function ChatOverlayMessage(props:any) {
         </div>
     );
 }
+
+export default ChatOverlayMessage;

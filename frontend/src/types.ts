@@ -2,22 +2,23 @@ import { Tags } from "twitch-js";
 
 export type wsMessage = {
     header: header;
-    body: id | widget;
+    body: id | widget | twitchChatMessage;
 }
 
 export type id = {
     id: string;
 }
 
-export type header =
-    "id" |
-    "widget";
+export type header = "id"
+    | "widget"
+    | "twitchMessage";
 
 export type widgetType =
     "chatOverlay";
 
 export type widget = {
     type: widgetType;
+    style: StyleSheet;
 }
 
 export type chatMessage = youtubeChatMessage | twitchChatMessage;

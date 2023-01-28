@@ -6,12 +6,16 @@ import configureStore from './redux/store';
 import { Provider } from "react-redux";
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import { setId, setWidget } from './redux/actions/configActions';
-import { widget, wsMessage } from './types';
+import { twitchChatMessage, widget, wsMessage } from './types';
+import Widget from './widgets/Widget';
+import { newTwitchChatMessage } from './redux/actions/twitchActions';
 
 const store = configureStore();
 const ws = new ReconnectingWebSocket("ws://localhost:4001");
 
-const id = {id: window.location.pathname.split('/')[0]};
+//const id = {id: window.location.pathname.split('/')[0]};
+const id = {id: "imaron85"};
+
 store.dispatch(setId(id));
 const openMsg:wsMessage = {
   header: "id",
@@ -20,13 +24,13 @@ const openMsg:wsMessage = {
 
 function App() {
   return (
-    <Chat/>
+    <Widget/>
   );
 }
 
 //exports the app but wrapped in the redux provider
 //only renders app after websocket connection was successful
-export default function app_provider_wrapper(this: any) {
+function AppProviderWrapper(this: any) {
   const [websocket, setWebsocket] = useState(false);
   
   ws.onopen = () => {
@@ -54,11 +58,20 @@ export default function app_provider_wrapper(this: any) {
   );
 }
 
+export default function WrapperWrapper() {
+  return <AppProviderWrapper />
+}
+
 function handelWsMessage(event: MessageEvent<any>) {
   const msg = JSON.parse(event.data) as wsMessage;
+  console.log(msg);
 
   switch(msg.header){
     case "widget":
       store.dispatch(setWidget(msg.body as widget));
+      break;
+    case "twitchMessage":
+      store.dispatch(newTwitchChatMessage(msg.body as twitchChatMessage));
+      break;
   }
 }
