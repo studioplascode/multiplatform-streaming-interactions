@@ -28,7 +28,7 @@ export type twitchChatMessage = {
     isMod: boolean;
     firstMsg: boolean;
     color: string;
-    tags: {
+    tags?: {
         [key: string]: string | number | boolean;
     } //copy remaining tags
 };
