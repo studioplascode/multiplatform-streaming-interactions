@@ -1,44 +1,77 @@
-const tmi = require("tmi.js");
-const WS = require("ws");
-import WebSocket, { WebSocketServer } from 'ws';
+const ws = require("ws");
+import { Chat, ChatEvents } from "twitch-js";
+import WebSocket, { WebSocketServer } from "ws";
+import { twitchChatMessage, wsMessage, wsResponse } from "../../types";
 
-const wss = new WebSocketServer({port: 4001});
+const wss = new WebSocketServer({ port: 4001 });
 
-export default function twitchChat () {
-    const client = new tmi.Client({
-        channels: ["imaron85"]
+export default function twitchChat() {
+  let client: Chat;
+  wss.on("connection", (ws: WebSocket) => {
+
+    //sending message
+    ws.on("message", (data: String) => {
+      let dataParsed: wsMessage = { header: "", body: { id: "" } };
+
+      // try to parse the data, if it fails, close the connection
+      try {
+        dataParsed = JSON.parse(data.toString());
+      } catch (e) {
+        ws.send(JSON.stringify({ header: "error", body: { error: "invalid json string" } }));
+        ws.close();
+        return;
+      }
+
+      if (typeof dataParsed?.body?.id === "string" && dataParsed?.body?.id.length > 0) {
+        connectToTwitchChat("imaron85", ws).then((res: Chat) => (client = res));
+
+        // send response
+        let response: wsResponse = { header: "widget", body: { widget: { type: "chatOverlay" } } };
+        ws.send(JSON.stringify(response));
+      }
     });
 
-    client.connect();
-
-    wss.on("connection", (ws:any) => {
-        console.log("new client connected");
-
-        client.on("message", (channel:any, tags:any, message:any, self:any) => {
-            console.log(`${tags["display-name"]}: ${message}`);
-            ws.send(JSON.stringify({name: tags["display-name"], content: message}));
-        });
-
-        //sending message
-        ws.on("message", (data:any) => {
-            console.log(`Client has sent us: ${data}`)
-        });
-        // handling what to do when clients disconnects from server
-        ws.on("close", () => {
-            console.log("the client has connected");
-        });
-        // handling client connection error
-        ws.onerror = function () {
-            console.log("Some Error occurred")
-        }
+    // handling what to do when clients disconnects from server
+    ws.on("close", () => {
+      if (client) client.disconnect();
     });
+
+    // handling client connection error
+    ws.onerror = function () {
+      if (client) client.disconnect();
+    };
+  });
 }
 
-// import TwitchJS from "twitch-js";
 
-// const client = new TwitchJS({username: "justinfan1234", token:""});
+const handleTwitchMessage: (message: any, ws: WebSocket) => void = (message, ws) => {
+  let parsedMessage: twitchChatMessage = {
+    channel: message.channel.slice(1),
+    user: message.user,
+    name: message.tags.displayName,
+    timestamp: message.timestamp,
+    content: message.message,
+    badges: [],
+    sub: message.tags.subscriber != 0,
+    isMod: message.tags.mod != 0,
+    firstMsg: message.tags.firstMsg != 0,
+    color: message.tags.color,
+    tags: message.tags
+  };
 
-// export default function twitchChat () {
-//     client.chat.join("#imaron85");
-//     client.chat.on("*", console.log);
-// }
+  // received message from Twitch, now parse it before sending to client
+  ws.send(JSON.stringify({ header: "twitchMessage", body: parsedMessage }));
+};
+
+const connectToTwitchChat: (channel: string, ws: WebSocket) => Promise<Chat> = async (channel, ws) => {
+  const chat: Chat = new Chat({});
+
+  await chat.connect();
+  await chat.join(channel);
+
+  // handle chat messages
+  chat.on("PRIVMSG", (message) => handleTwitchMessage(message, ws));
+
+  return chat;
+};
+
