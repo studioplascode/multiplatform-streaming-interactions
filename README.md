@@ -23,20 +23,30 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
   - [ ] Highlighted
   - [ ] Emotes
   - [ ] Badges
+  - [ ] Display Replys as such
+  - [ ] Channel Point Rewards
+  - [ ] Slash Commands
+    - [ ] Shoutout Overlay
+    - [ ] Announcements
 - [ ] Follows
+  - [ ] Follow Goals
 - [ ] Subs
+  - [ ] Sub Goals
 
 ### YouTube
 - [ ] Chat
   - [ ] Super Chats
   - [ ] BTTV Emotes?
 - [ ] Members
+  - [ ] Member Goals
+- [ ] Sub Goals
 
 ### Discord
 - [ ] Chat
   - [ ] Emoji
   - [ ] Custom Emoji
   - [ ] Roles
+- [ ] Member Goals
 - [ ] Server Subscriptions?
   
 ### UI
@@ -46,11 +56,13 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 - [ ] Sub/Member/Cheer (Event) Overlay
 - [ ] Event Dock/Window
 - [ ] EInk Mode
+- [ ] Multiplatform Mod-View
 
 ### Other
 - [ ] Easy setup via docker
 - [ ] Easy to use API
 - [ ] Great Documentation for said API
+- [ ] Polling accross all platforms?
 
 Feel free to create issues and suggest features
 
