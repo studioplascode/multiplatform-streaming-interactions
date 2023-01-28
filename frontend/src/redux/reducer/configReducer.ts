@@ -13,7 +13,7 @@ const initialState = {
             return {...state, ...action.payload};
         case "config/setWidget":
             const widget = action.payload as widget;
-            return {...state, widget: widget};
+            return {...state, ...widget};
 
         default:
             return state;

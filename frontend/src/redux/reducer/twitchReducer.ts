@@ -2,7 +2,7 @@ import { twitchChatMessage } from "../../types";
 import { action, twitchState } from "../reduxTypes";
 
 const initialState = {
-    chatMessageLimit: 50,
+    chatMessageLimit: 5,
     chatMessages: [] as twitchChatMessage[]
 } as twitchState;
  

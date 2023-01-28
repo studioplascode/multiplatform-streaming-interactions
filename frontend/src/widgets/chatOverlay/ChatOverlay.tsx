@@ -7,23 +7,11 @@ let messages:any[] = [];
 
 
 const Chat = (props:any) => {
-    const [msg, setMsg] = useState(messages);
-    
-    useEffect(() => {
-        const ws = new ReconnectingWebSocket("ws://localhost:4001");
-
-        ws.onopen = () => {
-            console.log("open")
-            ws.onmessage = (m:any) => {
-                console.log(m);
-                setMsg([...msg].concat([JSON.parse(m.data)]));
-            }
-        }
-    }, []);
+    const msg = props.twitch?.chatMessages;
 
     return(
         <div className="chat">
-            {msg.map(m => (<ChatOverlayMessage name={m.name} content={m.content}/>))}
+            {msg.map((m:any) => (<ChatOverlayMessage name={m.name} content={m.content}/>))}
         </div>
     );
 }
