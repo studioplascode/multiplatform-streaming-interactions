@@ -23,10 +23,10 @@ export default function twitchChat() {
       }
 
       if (typeof dataParsed?.body?.id === "string" && dataParsed?.body?.id.length > 0) {
-        connectToTwitchChat(dataParsed.body.id, ws).then((res: Chat) => (client = res));
+        connectToTwitchChat("imaron85", ws).then((res: Chat) => (client = res));
 
         // send response
-        let response: wsResponse = { header: "Widget", body: { widget: { type: "chatOverlay" } } };
+        let response: wsResponse = { header: "widget", body: { widget: { type: "chatOverlay" } } };
         ws.send(JSON.stringify(response));
       }
     });
@@ -45,19 +45,19 @@ export default function twitchChat() {
 
 
 const handleTwitchMessage: (message: any, ws: WebSocket) => void = (message, ws) => {
-  let parsedMessage: twitchChatMessage = message.map((msg: any) => Object({
-    channel: msg.channel.slice(1),
-    user: msg.user,
-    name: msg.tags.displayName,
-    timestamp: msg.timestamp,
-    content: msg.message,
+  let parsedMessage: twitchChatMessage = {
+    channel: message.channel.slice(1),
+    user: message.user,
+    name: message.tags.displayName,
+    timestamp: message.timestamp,
+    content: message.message,
     badges: [],
-    sub: msg.tags.subscriber != 0,
-    isMod: msg.tags.mod != 0,
-    firstMsg: msg.tags.firstMsg != 0,
-    color: msg.tags.color,
-    tags: msg.tags
-  }));
+    sub: message.tags.subscriber != 0,
+    isMod: message.tags.mod != 0,
+    firstMsg: message.tags.firstMsg != 0,
+    color: message.tags.color,
+    tags: message.tags
+  };
 
   // received message from Twitch, now parse it before sending to client
   ws.send(JSON.stringify({ header: "twitchMessage", body: parsedMessage }));
