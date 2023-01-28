@@ -1,4 +1,3 @@
-const tmi = require("tmi.js");
 const ws = require("ws");
 import { Chat, ChatEvents } from "twitch-js";
 import WebSocket, { WebSocketServer } from "ws";
