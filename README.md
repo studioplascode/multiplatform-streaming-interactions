@@ -1,7 +1,7 @@
-# ❌ NOT USABLE YET ❌
-Currently this project is not usable at all yet. As soon as I got some of the things working semi-properly this will change.
-
-# Multiplatform-Streaming-Interactions
+<p align="center">
+  <img src="./readme_assets/logo_v1_transparent_highres.png" height="200px"> 
+</p>
+<h1 align="center">Multiplatform-Streaming-Interactions</h1>
 
 Streaming has been closed source for too long. I am baffled that there are still no good solutions for things like Multiplatform-Chat, On-Stream Alerts and Notifications and everything else you've come to expect from the giants of the industry.
 
@@ -76,3 +76,6 @@ Feel free to create issues and suggest features
 - [ ] Getting basic alerts working
 - [ ] Bundling the app as a docker image
 - [ ] Web Interface to easily configure the Widgets
+
+# ❌ NOT USABLE YET ❌
+Currently this project is not usable at all yet. As soon as I got some of the things working semi-properly this will change.
