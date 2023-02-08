@@ -1,3 +1,9 @@
+[![Discord](https://discord.com/api/guilds/1070307140062949376/widget.png)](https://discord.gg/AUjy4wCyvt)
+[![Website](https://img.shields.io/website?down_color=darkred&url=https%3A%2F%2Fmspi.live)](https://mpsi.live)
+![GitHub](https://img.shields.io/github/license/fukuimaunicorn/multiplatform-streaming-interactions?color=gre)
+![GitHub last commit](https://img.shields.io/github/last-commit/fukuimaunicorn/multiplatform-streaming-interactions)
+
+
 <p align="center">
   <img src="./readme_assets/logo_v1_transparent_highres.png" height="200px"> 
 </p>
@@ -18,6 +24,7 @@ Nothing, to be quite honest. I've only started working on it. But I am highly mo
 ## Roadmap
 ### Twitch
 - [ ] Chat
+  - [x] Basic Messages
   - [ ] First Time Chatters
   - [ ] Cheers
   - [ ] Highlighted
@@ -69,7 +76,7 @@ Feel free to create issues and suggest features
 ## Progress
 - [x] Getting a basic understanding of the Twitch API
 - [x] Getting the Twitch Chat working in a very basic manner
-- [ ] Higher understanding of the Twitch API
+- [x] Higher understanding of the Twitch API
 - [ ] Getting to know the YouTubeLive API
 - [ ] Working OBS Web Widget to Display both Chats
 - [ ] OBS WebDock for the streamer with seperate settings
