@@ -7,6 +7,7 @@ import {
 import { Namespace } from "socket.io";
 import io from "../server";
 import * as util from "util";
+import { subscribeToTwitchChat } from "../handlers/twitch";
 
 const twitchNamespace: Namespace<
   TwitchNamespaceClientToServerEvents,
@@ -30,6 +31,10 @@ twitchNamespace.on("connection", (socket) => {
     "Socket connected:",
     socket.id
   );
+
+  socket.on("subscribe_chat", (channel) => {
+    subscribeToTwitchChat(channel, socket);
+  });
 });
 
 export default twitchNamespace;

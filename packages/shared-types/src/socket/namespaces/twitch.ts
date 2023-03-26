@@ -3,7 +3,7 @@ import { twitchChatMessage } from "../../twitch";
 
 export interface TwitchNamespaceClientToServerEvents
   extends ClientToServerEvents {
-  
+  subscribe_chat: (channel: string) => void;
 }
 
 export interface TwitchNamespaceServerToClientEvents

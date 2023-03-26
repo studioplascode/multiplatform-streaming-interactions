@@ -1,3 +1,9 @@
-export {default as io} from "./server";
+import io from "./server";
+import * as namespaces from "./namespaces";
 
-export * from "./namespaces";
+const Socket = {
+  server: io,
+  twitch: namespaces.twitchNamespace,
+};
+
+export default Socket;
