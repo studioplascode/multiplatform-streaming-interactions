@@ -1,0 +1,6 @@
+export enum loggerTitle {
+    EXPRESS_SERVER = "EXPRESS SERVER",
+    EXPRESS_REQUEST = "EXPRESS REQUEST",
+    REDIS_CLIENT = "REDIS CLIENT",
+    SOCKET = "SOCKET"
+  }
