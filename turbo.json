@@ -12,5 +12,10 @@
     "dev": {
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "EXPRESS_PORT",
+    "SOCKET_SERVER_PORT",
+    "NODE_ENV"
+  ]
 }
