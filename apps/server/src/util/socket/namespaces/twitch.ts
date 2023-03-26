@@ -7,7 +7,7 @@ import {
 import { Namespace } from "socket.io";
 import io from "../server";
 import * as util from "util";
-import { subscribeToTwitchChat } from "../handlers/twitch";
+import { subscribeToTwitchChat } from "../handlers";
 
 const twitchNamespace: Namespace<
   TwitchNamespaceClientToServerEvents,
