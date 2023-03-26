@@ -17,5 +17,8 @@
     "EXPRESS_PORT",
     "SOCKET_SERVER_PORT",
     "NODE_ENV"
-  ]
+  ],
+  "remoteCache": {
+    "signature": true
+  }
 }

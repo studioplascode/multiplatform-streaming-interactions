@@ -7,15 +7,15 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "dotenv turbo run build --token=$TURBO_TOKEN",
+    "dev": "dotenv turbo run dev --token=$TURBO_TOKEN",
+    "lint": "dotenv turbo run lint --token=$TURBO_TOKEN",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "1.8.x"
   },
   "engines": {
     "node": ">=14.0.0"
