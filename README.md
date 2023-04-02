@@ -15,7 +15,7 @@ Thus, I wanna build a tool to do exactly that.
 
 ## What this project is meant to be:
 
-This project is meant to become an easy to use, user-friendly tool that should be as close to know streaming-solutions as possible. Everything should be customizable. And everything should be open source.
+This project is meant to become an easy to use, user-friendly tool that should be as close to known streaming-solutions as possible. Everything should be customizable. And everything should be open source.
 
 ## What it is right now
 
