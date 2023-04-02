@@ -1,6 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 //import twitchChat from './util/chat/twitchChat';
+import Socket from './util/socket';
+Socket;
 
 dotenv.config();
 
