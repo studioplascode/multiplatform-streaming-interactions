@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 //import twitchChat from './util/chat/twitchChat';
 import Socket from './util/socket';
+import logger from 'logger';
+import { loggerTitle } from 'shared-types';
 Socket;
 
 dotenv.config();
@@ -18,5 +20,5 @@ app.get("/get-config", ()=>{})
 app.get("/set-config", ()=>{})
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  logger.info(loggerTitle.EXPRESS_SERVER, `⚡️[server]: Server is running at http://localhost:${port}`);
 });
