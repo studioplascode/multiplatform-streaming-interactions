@@ -1,14 +1,15 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import logger from "logger";
+import { loggerTitle } from "shared-types";
 import "./App.css";
+import Socket from "./util/socket";
+import Chat from "./components/chat";
+
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <h1>OVERLAYS</h1>
+      <Chat/>
     </div>
   );
 }
