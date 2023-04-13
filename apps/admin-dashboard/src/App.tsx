@@ -28,6 +28,8 @@ const teams = [
   { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
 
+//TODO: Split into components
+
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
