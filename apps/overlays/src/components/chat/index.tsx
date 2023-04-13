@@ -24,6 +24,7 @@ export default function Chat(props: any) {
         <ChatOverlayMessage
           name={m.name}
           content={m.content}
+          badges={m.badges}
           key={"msgKey" + i}
         />
       ))}
