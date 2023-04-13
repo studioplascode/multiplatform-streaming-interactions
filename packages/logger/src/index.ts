@@ -7,8 +7,8 @@ import loggerConfig from "./config";
 const loggerOptions: LoggerOptions = {
   write: true,
   path: {
-    debug_log: "./util/logs/debug.log",
-    error_log: "./util/logs/errors.log"
+    debug_log: "./src/util/logs/debug.log",
+    error_log: "./src/util/logs/errors.log"
   }
 };
 

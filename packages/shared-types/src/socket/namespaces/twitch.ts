@@ -1,3 +1,4 @@
+import { Chat } from "twitch-js";
 import { ClientToServerEvents, ServerToClientEvents } from "..";
 import { twitchChatMessage } from "../../twitch";
 

@@ -1,19 +1,43 @@
 import { Socket as SocketIO } from "socket.io";
 import { Chat } from "twitch-js";
-import Socket from "..";
 import { parseTwitchMessage } from "../parsers";
+import logger from "logger";
+import {
+  TwitchNamespaceClientToServerEvents,
+  TwitchNamespaceServerToClientEvents,
+  loggerTitle,
+} from "shared-types";
+import { handlerStore } from ".";
 
 export const subscribeToTwitchChat = async (
   channel: string,
-  socket: SocketIO
+  socket: SocketIO<
+    TwitchNamespaceClientToServerEvents,
+    TwitchNamespaceServerToClientEvents
+  >
 ) => {
-  const chat: Chat = new Chat({});
+  let chat = handlerStore.get(socket.id)?.twitchChat;
 
-  await chat.connect();
-  await chat.join(channel);
+  if (!chat) {
+    chat = new Chat({ log: { level: "error" } });
 
-  // handle chat messages
-  chat.on("PRIVMSG", (message) => {
-    Socket.twitch.emit("message", parseTwitchMessage(message));
-  });
+    handlerStore.set(socket.id, {
+      twitchChat: chat,
+    });
+
+    await chat.connect();
+    await chat.join(channel);
+
+    // relay message
+    chat.on("PRIVMSG", (message) => {
+      logger.debug(loggerTitle.SOCKET, "Twitch chat message received", message.message);
+      socket.emit("message", parseTwitchMessage(message));
+    });
+
+    // remove chat on disconnect
+    socket.on("disconnect", () => {
+      chat?.removeAllListeners();
+      handlerStore.delete(socket.id);
+    });
+  }
 };
