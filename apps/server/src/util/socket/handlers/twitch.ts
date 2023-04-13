@@ -30,7 +30,7 @@ export const subscribeToTwitchChat = async (
 
     // relay message
     chat.on("PRIVMSG", (message) => {
-      logger.debug(loggerTitle.SOCKET, "Twitch chat message received");
+      logger.debug(loggerTitle.SOCKET, "Twitch chat message received", message.message);
       socket.emit("message", parseTwitchMessage(message));
     });
 

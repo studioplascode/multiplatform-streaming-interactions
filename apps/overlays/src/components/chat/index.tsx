@@ -9,13 +9,12 @@ export default function Chat(props: any) {
 
   useEffect(() => {
     Socket.twitch.emit("subscribe_chat", "imaron85");
+    Socket.twitch.removeAllListeners();
     Socket.twitch.on("message", (msg) => {
-      console.log(msg);
-
-      const newMessages = [...messages];
-      newMessages.push(msg);
-      //newMessages.length > 5 && newMessages.shift();
-      setMsg(newMessages);
+      setMsg((oldMessages) => {
+        if (oldMessages.length > 4) oldMessages.shift();
+        return [...oldMessages, msg];
+      });
     });
   }, []);
 
