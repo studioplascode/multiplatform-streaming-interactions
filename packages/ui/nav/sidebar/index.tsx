@@ -24,8 +24,8 @@ const Sidebar = (props: SidebarProps) => {
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex grow flex-col overflow-y-auto bg-zinc-900 px-6">
-          <div className="flex h-16 shrink-0 items-center">
-            <img className="h-8 w-auto" src={props.logo} alt="Your Company" />
+          <div className="flex shrink-0 items-center">
+            <img className="h-24 w-auto m-auto p-4" src={props.logo} alt="MPSI Logo" />
           </div>
           <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">

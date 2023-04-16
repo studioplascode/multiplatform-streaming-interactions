@@ -5,10 +5,10 @@ import {
 
 const MobileSidebarButton = ({setSidebarOpen, profilePicture}: {setSidebarOpen: (value: boolean) => void, profilePicture: string}) => {
     return (
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-zinc-900 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
         <button
           type="button"
-          className="-m-2.5 p-2.5 text-gray-400 lg:hidden"
+          className="-m-2.5 p-2.5 text-zinc-400 lg:hidden"
           onClick={() => setSidebarOpen(true)}
         >
           <span className="sr-only">Open sidebar</span>
@@ -20,7 +20,7 @@ const MobileSidebarButton = ({setSidebarOpen, profilePicture}: {setSidebarOpen: 
         <a href="#">
           <span className="sr-only">Your profile</span>
           <img
-            className="h-8 w-8 rounded-full bg-gray-800"
+            className="h-8 w-8 rounded-full bg-zinc-800"
             src={profilePicture}
             alt=""
           />

@@ -32,7 +32,7 @@ const MobileSidebar = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-900/80" />
+          <div className="fixed inset-0 bg-zinc-900/80" />
         </Transition.Child>
 
         <div className="fixed inset-0 flex">
@@ -70,9 +70,13 @@ const MobileSidebar = ({
                 </div>
               </Transition.Child>
               {/* Sidebar component, swap this element with another sidebar if you like */}
-              <div className="flex grow flex-col overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
-                <div className="flex h-16 shrink-0 items-center">
-                  <img className="h-8 w-auto" src={logo} alt="Your Company" />
+              <div className="flex grow flex-col overflow-y-auto bg-zinc-900 px-6 pb-2 ring-1 ring-white/10">
+                <div className="flex shrink-0 items-center">
+                  <img
+                    className="h-24 w-auto m-auto p-4"
+                    src={logo}
+                    alt="MPSI Logo"
+                  />
                 </div>
                 <nav className="flex flex-1 flex-col">
                   <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -85,7 +89,7 @@ const MobileSidebar = ({
                     </li>
                     <li>
                       <div className="relative w-full">
-                        <div className="text-xs font-semibold leading-6 text-gray-400">
+                        <div className="text-xs font-semibold leading-6 text-zinc-400">
                           Your Channels
                         </div>
                         <a
@@ -94,7 +98,7 @@ const MobileSidebar = ({
                           style={{ right: 0 }}
                         >
                           <PlusSmallIcon
-                            className="h-6 w-6 shrink-0 text-gray-400 hover:text-white"
+                            className="h-6 w-6 shrink-0 text-zinc-400 hover:text-white"
                             aria-hidden="true"
                           />
                         </a>
