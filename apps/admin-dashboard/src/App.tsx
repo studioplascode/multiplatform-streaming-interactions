@@ -17,7 +17,7 @@ const sideBarItems = [
   { name: "Settings", href: "#", icon: CogIcon, current: false },
 ];
 const channels = [
-  { name: "I'm Aron", href: "#", platform: Platform.YOUTUBE, current: true },
+  { name: "I'm Aron", href: "#", platform: Platform.YOUTUBE, current: false },
   { name: "ImAron85", href: "#", platform: Platform.TWITCH, current: false },
 ];
 
