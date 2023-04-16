@@ -28,8 +28,6 @@ const channels = [
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
 ];
 
-//TODO: Split into components
-
 const App = () => {
   return (
     <>
