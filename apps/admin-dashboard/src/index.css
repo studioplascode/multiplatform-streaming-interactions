@@ -6,3 +6,13 @@
 html, body, #root {
   height: 100%;
 }
+
+.mpsi-gradient {
+    background: linear-gradient(90deg, rgba(114,137,218,1) 0%, rgba(100,65,165,1) 50%, rgba(255,0,0,1) 100%);
+    background-size: 200%;
+    transition: .5s;
+}
+
+.mpsi-gradient:hover {
+    background-position: 100%;
+}
