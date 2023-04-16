@@ -14,14 +14,14 @@ export {default as Dashboard} from "./dashboard";
 export {default as Page404} from "./404";
 
 const sideBarItems = [
-  { name: "Dashboard", href: "dashboard", icon: HomeIcon, current: true },
-  { name: "Chat", href: "chat", icon: ChatBubbleLeftIcon, current: false },
-  { name: "Overlays", href: "overlays", icon: CpuChipIcon, current: false },
-  { name: "Settings", href: "settings", icon: CogIcon, current: false },
+  { name: "Dashboard", href: "dashboard", icon: HomeIcon },
+  { name: "Chat", href: "chat", icon: ChatBubbleLeftIcon },
+  { name: "Overlays", href: "overlays", icon: CpuChipIcon },
+  { name: "Settings", href: "settings", icon: CogIcon },
 ];
 const channels = [
-  { name: "YouTube-Channel Placeholder", href: "#", platform: Platform.YOUTUBE, current: false },
-  { name: "Twitch-Channel Placeholder", href: "#", platform: Platform.TWITCH, current: false },
+  { name: "YouTube-Channel Placeholder", href: "#", platform: Platform.YOUTUBE },
+  { name: "Twitch-Channel Placeholder", href: "#", platform: Platform.TWITCH },
 ];
 
 
@@ -30,8 +30,8 @@ const Root = () => {
     <>
       <Sidebar items={sideBarItems} channels={channels} logo={logo} />
 
-      <div>
-        <main className="py-10 lg:pl-72">
+      <div className="h-full">
+        <main className="py-10 lg:pl-72 bg-zinc-950 h-full">
           <div className="px-4 sm:px-6 lg:px-8">
             <Outlet />
           </div>

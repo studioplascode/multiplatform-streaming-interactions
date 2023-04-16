@@ -5,7 +5,6 @@ export type SidebarItemProps = {
     name: string;
     href: string;
     icon?: Icon;
-    current: boolean;
     platform?: Platform;
 };
 

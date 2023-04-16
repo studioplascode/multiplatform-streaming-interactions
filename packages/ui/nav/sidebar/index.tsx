@@ -23,7 +23,7 @@ const Sidebar = (props: SidebarProps) => {
       {/* Static sidebar for desktop */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col overflow-y-auto bg-gray-900 px-6">
+        <div className="flex grow flex-col overflow-y-auto bg-zinc-900 px-6">
           <div className="flex h-16 shrink-0 items-center">
             <img className="h-8 w-auto" src={props.logo} alt="Your Company" />
           </div>
@@ -38,12 +38,12 @@ const Sidebar = (props: SidebarProps) => {
               </li>
               <li>
                 <div className="relative w-full">
-                  <div className="text-xs font-semibold leading-6 text-gray-400">
+                  <div className="text-xs font-semibold leading-6 text-zinc-400">
                     Your Channels
                   </div>
                   <a href="#" className="absolute top-0" style={{ right: 0 }}>
                     <PlusSmallIcon
-                      className="h-6 w-6 shrink-0 text-gray-400 hover:text-white"
+                      className="h-6 w-6 shrink-0 text-zinc-400 hover:text-white"
                       aria-hidden="true"
                     />
                   </a>
