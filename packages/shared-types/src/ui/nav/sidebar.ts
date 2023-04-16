@@ -1,10 +1,12 @@
 import { Icon } from "../";
+import { Platform } from "../..";
 
 export type SidebarItemProps = {
     name: string;
     href: string;
-    icon: Icon;
+    icon?: Icon;
     current: boolean;
+    platform?: Platform;
 };
 
 export type SidebarProps = {

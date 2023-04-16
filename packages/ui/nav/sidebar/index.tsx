@@ -35,7 +35,7 @@ const Sidebar = (props: SidebarProps) => {
               </li>
               <li>
                 <div className="text-xs font-semibold leading-6 text-gray-400">
-                  Your teams
+                  Your Channels
                 </div>
                 <ul role="list" className="-mx-2 mt-2 space-y-1">
                   {props?.channels?.map((channel) => (

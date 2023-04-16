@@ -1,37 +1,30 @@
+import { Platform } from "shared-types";
 import "./App.css";
 
 import logo from "./assets/logo_v1_transparent_lowres.png";
 import {
-  Bars3Icon,
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
-  UsersIcon,
-  XMarkIcon,
+  ChatBubbleLeftIcon,
+  CpuChipIcon,
+  CogIcon
 } from "@heroicons/react/24/outline";
 import { Sidebar } from "ui";
 
-const navigation = [
+const sideBarItems = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Chat", href: "#", icon: ChatBubbleLeftIcon, current: false },
+  { name: "Overlays", href: "#", icon: CpuChipIcon, current: false },
+  { name: "Settings", href: "#", icon: CogIcon, current: false },
 ];
 const channels = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+  { name: "I'm Aron", href: "#", platform: Platform.YOUTUBE, current: true },
+  { name: "ImAron85", href: "#", platform: Platform.TWITCH, current: false },
 ];
 
 const App = () => {
   return (
     <>
-      <Sidebar items={navigation} channels={channels} logo={logo} />
+      <Sidebar items={sideBarItems} channels={channels} logo={logo} />
 
       <div>
         <main className="py-10 lg:pl-72">
