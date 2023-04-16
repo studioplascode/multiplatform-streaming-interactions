@@ -6,7 +6,8 @@ import {
   HomeIcon,
   ChatBubbleLeftIcon,
   CpuChipIcon,
-  CogIcon
+  CogIcon,
+  RectangleStackIcon
 } from "@heroicons/react/24/outline";
 import { Outlet } from "react-router-dom";
 
@@ -16,7 +17,7 @@ export {default as Page404} from "./404";
 const sideBarItems = [
   { name: "Dashboard", href: "dashboard", icon: HomeIcon },
   { name: "Chat", href: "chat", icon: ChatBubbleLeftIcon },
-  { name: "Overlays", href: "overlays", icon: CpuChipIcon },
+  { name: "Overlays", href: "overlays", icon: RectangleStackIcon },
   { name: "Settings", href: "settings", icon: CogIcon },
 ];
 const channels = [
