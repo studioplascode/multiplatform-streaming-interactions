@@ -61,11 +61,11 @@ const Sidebar = (props: SidebarProps) => {
                 >
                   <img
                     className="h-8 w-8 rounded-full bg-gray-800"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src={props.logo}
                     alt=""
                   />
                   <span className="sr-only">Your profile</span>
-                  <span aria-hidden="true">Tom Cook</span>
+                  <span aria-hidden="true">MPSI User Placeholder</span>
                 </a>
               </li>
             </ul>
