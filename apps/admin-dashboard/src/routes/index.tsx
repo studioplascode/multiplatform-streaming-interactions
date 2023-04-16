@@ -14,10 +14,10 @@ export {default as Dashboard} from "./dashboard";
 export {default as Page404} from "./404";
 
 const sideBarItems = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Chat", href: "#", icon: ChatBubbleLeftIcon, current: false },
-  { name: "Overlays", href: "#", icon: CpuChipIcon, current: false },
-  { name: "Settings", href: "#", icon: CogIcon, current: false },
+  { name: "Dashboard", href: "dashboard", icon: HomeIcon, current: true },
+  { name: "Chat", href: "chat", icon: ChatBubbleLeftIcon, current: false },
+  { name: "Overlays", href: "overlays", icon: CpuChipIcon, current: false },
+  { name: "Settings", href: "settings", icon: CogIcon, current: false },
 ];
 const channels = [
   { name: "YouTube-Channel Placeholder", href: "#", platform: Platform.YOUTUBE, current: false },

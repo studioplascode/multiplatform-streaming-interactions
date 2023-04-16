@@ -1,6 +1,7 @@
 import { faYoutube, faTwitch } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 import { Platform, SidebarItemProps } from "shared-types";
 
 const SidebarItem = ({ item }: { item: SidebarItemProps }) => {
@@ -20,8 +21,8 @@ const SidebarItem = ({ item }: { item: SidebarItemProps }) => {
 
   return (
     <li key={item.name}>
-      <a
-        href={item.href}
+      <Link
+        to={item.href}
         className={classNames(
           item.current
             ? "bg-gray-800 text-white"
@@ -31,7 +32,7 @@ const SidebarItem = ({ item }: { item: SidebarItemProps }) => {
       >
         {icon}
         {item.name}
-      </a>
+      </Link>
     </li>
   );
 };
