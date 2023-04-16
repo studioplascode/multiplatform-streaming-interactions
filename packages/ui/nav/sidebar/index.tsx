@@ -73,7 +73,7 @@ const Sidebar = (props: SidebarProps) => {
         </div>
       </div>
 
-      <MobileSidebarButton setSidebarOpen={setSidebarOpen} />
+      <MobileSidebarButton setSidebarOpen={setSidebarOpen} profilePicture={props.logo} />
     </>
   );
 };

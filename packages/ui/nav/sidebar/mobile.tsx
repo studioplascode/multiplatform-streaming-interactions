@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { PlusSmallIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { Fragment } from "react";
 import { SidebarProps } from "shared-types";
@@ -79,17 +79,29 @@ const MobileSidebar = ({
                     <li>
                       <ul role="list" className="-mx-2 space-y-1">
                         {items?.map((item) => (
-                          <SidebarItem item={item} key={item.name}/>
+                          <SidebarItem item={item} key={item.name} />
                         ))}
                       </ul>
                     </li>
                     <li>
-                      <div className="text-xs font-semibold leading-6 text-gray-400">
-                        Your Channels
+                      <div className="relative w-full">
+                        <div className="text-xs font-semibold leading-6 text-gray-400">
+                          Your Channels
+                        </div>
+                        <a
+                          href="#"
+                          className="absolute top-0"
+                          style={{ right: 0 }}
+                        >
+                          <PlusSmallIcon
+                            className="h-6 w-6 shrink-0 text-gray-400 hover:text-white"
+                            aria-hidden="true"
+                          />
+                        </a>
                       </div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
                         {channels?.map((channel) => (
-                          <SidebarItem item={channel} key={channel.name}/>
+                          <SidebarItem item={channel} key={channel.name} />
                         ))}
                       </ul>
                     </li>
