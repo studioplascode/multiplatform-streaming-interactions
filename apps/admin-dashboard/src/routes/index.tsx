@@ -13,6 +13,7 @@ import { Outlet } from "react-router-dom";
 
 export {default as Dashboard} from "./dashboard";
 export {default as Page404} from "./404";
+export {default as Chat} from "./chat";
 
 const sideBarItems = [
   { name: "Dashboard", href: "dashboard", icon: HomeIcon },
@@ -33,7 +34,7 @@ const Root = () => {
 
       <div className="h-full">
         <main className="py-10 lg:pl-72 bg-zinc-950 h-full">
-          <div className="px-4 sm:px-6 lg:px-8">
+          <div className="px-4 sm:px-6 lg:px-8 h-full">
             <Outlet />
           </div>
         </main>
