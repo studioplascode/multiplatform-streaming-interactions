@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Root, { Dashboard, Page404, Chat } from "./routes";
+import Root, { Dashboard, Page404, Chat, Overlays, CreateOverlay } from "./routes";
 
 const router = createBrowserRouter([
   { path: "*", element: <Page404 /> },
@@ -17,6 +17,16 @@ const router = createBrowserRouter([
       {
         path: "chat/",
         element: <Chat />,
+      },
+      {
+        path: "overlays/",
+        element: <Overlays />,
+        children: [
+          {
+            path: "create/",
+            element: <CreateOverlay />,
+          }
+        ]
       },
     ],
   },

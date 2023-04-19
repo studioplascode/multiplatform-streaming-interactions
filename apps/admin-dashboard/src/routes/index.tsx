@@ -7,13 +7,16 @@ import {
   ChatBubbleLeftIcon,
   CpuChipIcon,
   CogIcon,
-  RectangleStackIcon
+  RectangleStackIcon,
 } from "@heroicons/react/24/outline";
 import { Outlet } from "react-router-dom";
 
-export {default as Dashboard} from "./dashboard";
-export {default as Page404} from "./404";
-export {default as Chat} from "./chat";
+export { default as Dashboard } from "./dashboard";
+export { default as Page404 } from "./404";
+export { default as Chat } from "./chat";
+
+export * from "./overlays";
+export { default as Overlays } from "./overlays";
 
 const sideBarItems = [
   { name: "Dashboard", href: "dashboard", icon: HomeIcon },
@@ -22,10 +25,13 @@ const sideBarItems = [
   { name: "Settings", href: "settings", icon: CogIcon },
 ];
 const channels = [
-  { name: "YouTube-Channel Placeholder", href: "#", platform: Platform.YOUTUBE },
+  {
+    name: "YouTube-Channel Placeholder",
+    href: "#",
+    platform: Platform.YOUTUBE,
+  },
   { name: "Twitch-Channel Placeholder", href: "#", platform: Platform.TWITCH },
 ];
-
 
 const Root = () => {
   return (
