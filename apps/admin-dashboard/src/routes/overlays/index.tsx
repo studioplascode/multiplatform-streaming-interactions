@@ -3,7 +3,6 @@ import { Menu, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { FloatingButton, LogoDescriptionCard } from "ui";
-import { Outlet } from "react-router-dom";
 
 export { default as CreateOverlay } from "./create";
 export { default as EditOverlay } from "./edit";
@@ -65,8 +64,6 @@ const Overlays = () => {
           />
         ))}
       </ul>
-
-      <Outlet />
 
       <FloatingButton
         href="./create"

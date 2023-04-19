@@ -20,14 +20,12 @@ const router = createBrowserRouter([
       },
       {
         path: "overlays/",
-        element: <Overlays />,
-        children: [
-          {
-            path: "create/",
-            element: <CreateOverlay />,
-          }
-        ]
+        element: <Overlays />
       },
+      {
+        path: "overlays/create/",
+        element: <CreateOverlay />,
+      }
     ],
   },
 ]);
