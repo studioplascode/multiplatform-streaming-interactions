@@ -3,8 +3,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { SlideoverProps } from "shared-types";
 
-export {default as BurgerButton} from "./burgerBtn";
-
 //TODO: Make stuff in Background still interactable
 const Slideover = ({setOpen, open, children}: SlideoverProps) => {
   return (

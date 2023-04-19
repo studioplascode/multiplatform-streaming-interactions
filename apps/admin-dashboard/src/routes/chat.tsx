@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { HiddenLabelInput, Slideover } from "ui";
-import { BurgerButton } from "ui/nav/slideover";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { HiddenLabelInput, Slideover, FloatingButton } from "ui";
+import { AdjustmentsHorizontalIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 //TODO: Make adjust width to sliderover so both can be interacted with
 const Chat = () => {
@@ -24,7 +23,7 @@ const Chat = () => {
           </button>
         </div>
       </div>
-      <BurgerButton action={setSlideoverOpen} />
+      <FloatingButton action={() => setSlideoverOpen(true)} icon={AdjustmentsHorizontalIcon} className="top-4 right-4"/>
       <Slideover open={slideoverOpen} setOpen={setSlideoverOpen} />
     </>
   );
